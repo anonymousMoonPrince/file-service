@@ -1,0 +1,8 @@
+.idea
+bin/
+vendor.pb/
+.env.local
+files/
+.DS_Store
+internal/tools/checker/file.txt
+*.output

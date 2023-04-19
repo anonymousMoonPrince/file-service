@@ -1,0 +1,39 @@
+minio:
+  - url: "localhost:9000"
+    access_key: "minio_access_key"
+    secret_key: "minio_secret_key"
+    secure: false
+    token: ""
+    region: "eu-north-1"
+  - url: "localhost:9002"
+    access_key: "minio_access_key"
+    secret_key: "minio_secret_key"
+    secure: false
+    token: ""
+    region: "eu-north-1"
+  - url: "localhost:9004"
+    access_key: "minio_access_key"
+    secret_key: "minio_secret_key"
+    secure: false
+    token: ""
+    region: "eu-north-1"
+  - url: "localhost:9006"
+    access_key: "minio_access_key"
+    secret_key: "minio_secret_key"
+    secure: false
+    token: ""
+    region: "eu-north-1"
+  - url: "localhost:9008"
+    access_key: "minio_access_key"
+    secret_key: "minio_secret_key"
+    secure: false
+    token: ""
+    region: "eu-north-1"
+postgres:
+  dsn: "postgresql://localhost:5432/file-service?user=root&password=root&sslmode=disable"
+  max_connections: 12
+server:
+  port: 8080
+business:
+  chunk_count: 5
+  bucket: "files"

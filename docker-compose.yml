@@ -1,0 +1,74 @@
+version: "3"
+services:
+  database:
+    image: "postgres:13"
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=file-service
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+  minio1:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ACCESS_KEY: minio_access_key
+      MINIO_SECRET_KEY: minio_secret_key
+    command: server --console-address ":9001" /data
+    volumes:
+      - minio1-data:/data
+  minio2:
+    image: minio/minio
+    ports:
+      - "9002:9000"
+      - "9003:9001"
+    environment:
+      MINIO_ACCESS_KEY: minio_access_key
+      MINIO_SECRET_KEY: minio_secret_key
+    command: server --console-address ":9001" /data
+    volumes:
+      - minio2-data:/data
+  minio3:
+    image: minio/minio
+    ports:
+      - "9004:9000"
+      - "9005:9001"
+    environment:
+      MINIO_ACCESS_KEY: minio_access_key
+      MINIO_SECRET_KEY: minio_secret_key
+    command: server --console-address ":9001" /data
+    volumes:
+      - minio3-data:/data
+  minio4:
+    image: minio/minio
+    ports:
+      - "9006:9000"
+      - "9007:9001"
+    environment:
+      MINIO_ACCESS_KEY: minio_access_key
+      MINIO_SECRET_KEY: minio_secret_key
+    command: server --console-address ":9001" /data
+    volumes:
+      - minio4-data:/data
+  minio5:
+    image: minio/minio
+    ports:
+      - "9008:9000"
+      - "9009:9001"
+    environment:
+      MINIO_ACCESS_KEY: minio_access_key
+      MINIO_SECRET_KEY: minio_secret_key
+    command: server --console-address ":9001" /data
+    volumes:
+      - minio5-data:/data
+volumes:
+  database-data:
+  minio1-data:
+  minio2-data:
+  minio3-data:
+  minio4-data:
+  minio5-data:
